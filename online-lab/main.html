@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deneyelim</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="baslik">
+        <h3 class="deney">KALDIRMA KUVVETİ DENEYİ</h3>
+    </div>
+    <div class="cisimler">
+        <button id="birinciCisim" class="birinciCisim">TAŞ</button>
+        <button id="ikinciCisim" class="ikinciCisim">TAHTA</button>
+        <button id="ucuncuCisim" class="ucuncuCisim">KÜP</button>
+    </div>
+    <div>
+        <img class="su" src="su.png" alt="">
+    </div>
+   
+</body>
+
+<script>
+
+    var birinciTas = document.getElementById("birinciCisim");
+    var clickCount = 0;
+
+    birinciTas.addEventListener("click", function () {
+        clickCount++;
+        if (clickCount == 1) {
+            singleClickTimer = setTimeout(function () {
+                clickCount = 0;
+                play();
+            }, 400);
+            console.log("tek click");
+        } else if (clickCount == 2) {
+            clearTimeout(singleClickTimer);
+            clickCount = 0;
+            doubleClick();
+            console.log("çift click");
+        }
+    }, false);
+
+    function play() {
+        let audio1 = new Audio('1gram.mp3');
+        audio1.play();
+    }
+
+    let audio2 = new Audio('batma.mp3');
+    function doubleClick() {
+        console.log("Çift tıklama");
+        audio2.play();
+    }
+
+</script>
+
+</html>
