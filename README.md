@@ -2,4 +2,4 @@
 
 
 
-[online lab](https://emineayranci.github.io/Online-Laboratory-Experiments/main.html) - lab
+[online lab](https://emineayranci.github.io/Online-Laboratory-Experiments/online-lab/main.html) - lab
